@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratorio Dental Kath | Registro y Recolección</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
+        
+        body { font-family: 'Inter', sans-serif; }
+        .bg-sage { background-color: #8da37e; }
+        .text-sage-dark { color: #2d3826; }
+        .hero-gradient { background: linear-gradient(135deg, #8da37e 0%, #6b7c5f 100%); }
+        
+        .input-dental { 
+            transition: all 0.3s ease; 
+            border: 2px solid #cbd5e1; 
+            color: #0f172a;
+            font-weight: 700;
+        }
+        .input-dental:focus { 
+            border-color: #8da37e; 
+            background-color: #ffffff;
+            box-shadow: 0 4px 15px rgba(141, 163, 126, 0.2);
+        }
+        
+        .label-strong { 
+            color: #1e293b; 
+            font-weight: 900;
+            font-size: 0.8rem;
+            letter-spacing: 0.05em;
+        }
+
+        .btn-secundario {
+            border: 2px solid #8da37e;
+            color: #5d6d52;
+            transition: all 0.3s ease;
+        }
+        .btn-secundario:hover {
+            background-color: #8da37e;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .card-servicio {
+            background: white;
+            border-radius: 1.5rem;
+            padding: 1.25rem;
+            border-left: 6px solid #8da37e;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased">
+
+    <a href="https://wa.me/523323711427" target="_blank" class="fixed bottom-6 right-6 bg-[#25D366] text-white p-4 rounded-full shadow-2xl z-50 hover:scale-110 transition duration-300">
+        <i class="fab fa-whatsapp text-3xl"></i>
+    </a>
+
+    <header class="hero-gradient pt-20 pb-44 px-6 text-center text-white relative shadow-lg">
+        <div class="absolute top-6 right-6 bg-white/10 backdrop-blur-md px-4 py-1 rounded-full text-[10px] font-black border border-white/20 uppercase tracking-widest">
+            Visitas: <span id="contador">0</span>
+        </div>
+        <h1 class="text-3xl md:text-5xl font-black uppercase italic tracking-tighter mb-3">Kathleen Itzel Becerra</h1>
+        <p class="text-xs md:text-lg font-bold opacity-90 uppercase tracking-[0.4em] mb-12">Laboratorio Dental Kath</p>
+        <a href="trabajos.html" class="inline-block bg-white text-sage-dark px-10 py-4 rounded-full font-black shadow-xl uppercase text-xs tracking-widest hover:bg-slate-100 transition duration-300">
+            Ver Galería de Trabajos
+        </a>
+    </header>
+
+    <section class="container mx-auto px-6 -mt-24 relative z-10 mb-20">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div class="card-servicio flex items-center gap-4">
+                <i class="fas fa-teeth-open text-sage-dark text-xl"></i>
+                <h3 class="font-black uppercase text-[10px] tracking-tight">Ortodoncia y Ortopedia</h3>
+            </div>
+            <div class="card-servicio flex items-center gap-4">
+                <i class="fas fa-shield-virus text-sage-dark text-xl"></i>
+                <h3 class="font-black uppercase text-[10px] tracking-tight">Guardas Oclusales</h3>
+            </div>
+            <div class="card-servicio flex items-center gap-4">
+                <i class="fas fa-tooth text-sage-dark text-xl"></i>
+                <h3 class="font-black uppercase text-[10px] tracking-tight">Placas Provisionales / Parciales</h3>
+            </div>
+            <div class="card-servicio flex items-center gap-4">
+                <i class="fas fa-pencil-alt text-sage-dark text-xl"></i>
+                <h3 class="font-black uppercase text-[10px] tracking-tight">Encerados de Diagnóstico</h3>
+            </div>
+            <div class="card-servicio flex items-center gap-4">
+                <i class="fas fa-gem text-sage-dark text-xl"></i>
+                <h3 class="font-black uppercase text-[10px] tracking-tight">Unidades de Céromero</h3>
+            </div>
+        </div>
+    </section>
+
+    <section id="registro" class="container mx-auto px-6 mb-16">
+        <div class="max-w-4xl mx-auto bg-white p-8 md:p-16 rounded-[3.5rem] shadow-[0_20px_60px_-15px_rgba(0,0,0,0.1)] border border-slate-200">
+            
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-black text-slate-900 uppercase italic tracking-tighter">Orden de Recolección</h2>
+                <p class="text-sage font-black text-xs uppercase tracking-[0.3em] mt-2">Registro de Nuevos Trabajos</p>
+                <div class="w-24 h-1.5 bg-sage mx-auto mt-4 rounded-full"></div>
+            </div>
+            
+            <form action="https://formsubmit.co/becerrakathleem@gmail.com" method="POST" class="space-y-10">
+                <input type="hidden" name="_cc" value="kathleenbecerra24@gmail.com">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_template" value="table">
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="space-y-3">
+                        <label class="label-strong block uppercase italic ml-2">Nombre del Dr. / Clínica</label>
+                        <div class="relative">
+                            <i class="fas fa-user-md absolute left-5 top-1/2 -translate-y-1/2 text-slate-400"></i>
+                            <input type="text" name="nombre" placeholder="Ej. Dr. García" class="input-dental w-full pl-12 pr-6 py-5 bg-slate-50 rounded-2xl outline-none text-sm" required>
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <label class="label-strong block uppercase italic ml-2">WhatsApp Directo</label>
+                        <div class="relative">
+                            <i class="fab fa-whatsapp absolute left-5 top-1/2 -translate-y-1/2 text-slate-400"></i>
+                            <input type="tel" name="whatsapp" placeholder="33 2371 1427" class="input-dental w-full pl-12 pr-6 py-5 bg-slate-50 rounded-2xl outline-none text-sm" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-3">
+                    <label class="label-strong block uppercase italic ml-2">Correo Electrónico del Doctor</label>
+                    <div class="relative">
+                        <i class="fas fa-envelope absolute left-5 top-1/2 -translate-y-1/2 text-slate-400"></i>
+                        <input type="email" name="email_doctor" placeholder="doctor@ejemplo.com" class="input-dental w-full pl-12 pr-6 py-5 bg-slate-50 rounded-2xl outline-none text-sm" required>
+                    </div>
+                </div>
+
+                <div class="bg-slate-50 p-8 rounded-[2.5rem] border-2 border-dashed border-slate-300 space-y-8 shadow-inner">
+                    <h3 class="text-sage-dark font-black uppercase text-[10px] tracking-[0.3em] text-center mb-4">Información del Envío</h3>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="space-y-3">
+                            <label class="label-strong block uppercase italic">Tipo de Muestra</label>
+                            <select name="tipo_muestra" class="input-dental w-full px-6 py-4 bg-white rounded-2xl outline-none cursor-pointer text-sm" required>
+                                <option value="" disabled selected>Seleccione...</option>
+                                <option value="Impresión Alginato">Impresión Alginato</option>
+                                <option value="Silicona">Impresión Silicona</option>
+                                <option value="Modelo Yeso">Modelo de Yeso</option>
+                                <option value="Reparación">Reparación de Prótesis</option>
+                                <option value="Otro">Otro (Especificar abajo)</option>
+                            </select>
+                        </div>
+                        <div class="space-y-3">
+                            <label class="label-strong block uppercase italic">Horario de Recolección</label>
+                            <select name="horario_recoleccion" class="input-dental w-full px-6 py-4 bg-white rounded-2xl outline-none cursor-pointer text-sm" required>
+                                <option value="" disabled selected>Elegir Horario...</option>
+                                <option value="Mañana (9:00 AM - 1:00 PM)">Mañana (9:00 AM - 1:00 PM)</option>
+                                <option value="Tarde (2:00 PM - 6:00 PM)">Tarde (2:00 PM - 6:00 PM)</option>
+                                <option value="Urgente">Urgente (Lo antes posible)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="space-y-3">
+                        <label class="label-strong block uppercase italic">Dirección Completa y Notas</label>
+                        <div class="relative">
+                            <i class="fas fa-map-marked-alt absolute left-5 top-6 text-slate-400"></i>
+                            <textarea name="direccion_notas" placeholder="Calle, Número, Colonia y descripción del caso..." class="input-dental w-full pl-12 pr-6 py-5 bg-white rounded-3xl outline-none text-sm h-32" required></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="w-full bg-sage text-white font-black py-6 rounded-2xl shadow-[0_15px_30px_-5px_rgba(141,163,126,0.5)] uppercase tracking-[0.25em] text-sm hover:scale-[1.02] transition duration-300 flex items-center justify-center gap-4">
+                    Enviar Solicitud de Recolección
+                    <i class="fas fa-truck-moving"></i>
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <div class="container mx-auto px-6 text-center mb-24">
+        <p class="text-xs font-black text-slate-400 uppercase tracking-widest mb-4 italic">¿Desea ver ejemplos de mis trabajos?</p>
+        <a href="trabajos.html" class="btn-secundario inline-flex items-center gap-4 px-12 py-4 rounded-full font-black uppercase text-xs tracking-widest shadow-md">
+            <i class="fas fa-images text-lg"></i>
+            Visualizar mis Trabajos
+        </a>
+    </div>
+
+    <section class="container mx-auto px-6 mb-32 text-center">
+        <div class="max-w-5xl mx-auto">
+            <h3 class="font-black uppercase text-slate-800 text-2xl tracking-tighter mb-2 italic underline decoration-sage decoration-4">Ubicación Guadalajara</h3>
+            <p class="font-bold text-slate-500 text-sm mb-10 tracking-wide uppercase">Volcán Fujillama 5846, Huentitán el Bajo.</p>
+            <div class="rounded-[3.5rem] overflow-hidden shadow-2xl h-[450px] border-[12px] border-white ring-1 ring-slate-200">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3731.956897463519!2d-103.3150554!3d20.7119567!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428b105a3068e6f%3A0x6b6d519398f6d7e6!2sVolc%C3%A1n%20Fujillama%205846%2C%20Huentit%C3%A1n%20el%20Bajo%2C%2044390%20Guadalajara%2C%20Jal.!5e0!3m2!1ses-419!2smx!4v1700000000000!5m2!1ses-419!2smx" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        let visitas = localStorage.getItem('v_kath_final_v5') || 0;
+        visitas++;
+        localStorage.setItem('v_kath_final_v5', visitas);
+        document.getElementById('contador').innerText = visitas;
+    </script>
+</body>
+</html>
