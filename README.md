@@ -1,2 +1,2 @@
 # labdenkath
-laboratori dental
+laboratorio dental
